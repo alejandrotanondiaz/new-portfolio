@@ -12,3 +12,22 @@
         <Project info={p} hLevel=3 />
     {/each}
 </div>
+
+<style>
+    .projects {
+  display: grid;
+  gap: 1em;
+  grid-template-columns: repeat(auto-fill, minmax(18em, 1fr));
+  grid-template-rows: subgrid;
+  article {
+    display: grid;
+    grid-row: span 3;
+    grid-template-rows: subgrid;
+    h2 {
+      min-height: 3em;
+      margin: 0;
+    }
+    
+  }
+}
+</style>
