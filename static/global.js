@@ -40,25 +40,26 @@ function $$ (selector, context = document) {
 // 	}
 // }
 
-document.body.insertAdjacentHTML("afterbegin", `
-	<label class="color-scheme">
-		Theme:
-		<select >
-			<option value="light dark">Defaut</option>
-			<option value="light">Light</option>
-			<option value="dark">Dark</option>
-		</select>
-	</label>`
-);
+// document.body.insertAdjacentHTML("afterbegin", `
+// 	<label class="color-scheme">
+// 		Theme:
+// 		<select >
+// 			<option value="light dark">Defaut</option>
+// 			<option value="light">Light</option>
+// 			<option value="dark">Dark</option>
+// 		</select>
+// 	</label>`
+// );
 
-let selector = document.querySelector("select");
+// let selector = document.querySelector("select");
 
-if ("colorScheme" in localStorage) {
-	document.documentElement.style.setProperty("color-scheme", localStorage.colorScheme);
-}
+// if ("colorScheme" in localStorage) {
+// 	document.documentElement.style.setProperty("color-scheme", localStorage.colorScheme);
+// 	selector.value = localStorage.colorScheme;
+// }
 
-selector.addEventListener("input", function (event) {
-	document.documentElement.style.setProperty("color-scheme", event.target.value);
-	localStorage.colorScheme = event.target.value;
-});
+// selector.addEventListener("input", function (event) {
+// 	document.documentElement.style.setProperty("color-scheme", event.target.value);
+// 	localStorage.colorScheme = event.target.value;
+// });
 
