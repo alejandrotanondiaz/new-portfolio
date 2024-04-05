@@ -19,28 +19,28 @@
       {:then data}
         <dl>
           <dt>
-            Followers: 
+            Followers 
           </dt>
           <dd>
             {data.followers}
           </dd>
 
           <dt>
-            Following: 
+            Following 
           </dt>
           <dd>
             {data.following}
           </dd>
 
           <dt>
-            Public Repos: 
+            Public Repos 
           </dt>
           <dd>
             {data.public_repos}
           </dd>
 
           <dt>
-            Public Gists: 
+            Public Gists 
           </dt>
           <dd>
             {data.public_gists}
@@ -70,7 +70,16 @@
 <style>
   dl{
     display: grid;
-    grid-template-columns: auto;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+  }
+  dt {
+    grid-row: 1;
+  }
+  dd {
+    grid-row: 2;
+    margin-inline-start: 0px;
+    font-size: 30px;
   }
   .projects {
   display: grid;

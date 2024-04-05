@@ -6,6 +6,7 @@
 	{url: "projects", title: "Projects"},
 	{url: "resume", title: "Resume"},
 	{url: "contact", title: "Contact"},
+  {url: "meta", title: "Meta"},
 	{url: "https://github.com/alejandrotanondiaz", title: "Github"},
     ];
 
@@ -23,7 +24,7 @@
 </script>
 
 <style>
-nav {
+  nav {
   display: flex;
   border-bottom-width: 1px;
   border-bottom-style: solid;

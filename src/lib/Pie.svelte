@@ -16,7 +16,7 @@
     //     { value: 5, label: "limes" },
     //     { value: 5, label: "cherries" }
     // ];
-    
+
     let sliceGenerator = d3.pie().value(d => d.value);
     let arcData;
     $: arcData = sliceGenerator(data);
@@ -30,6 +30,9 @@
 
             {#each arcs as arc, i}
                 <path d={arc} fill={colors(i)}
+                tabindex="0"
+                role="button"
+                aria-label="section"
                 class:selected={selectedIndex === i}
                 on:click={e => selectedIndex = selectedIndex === i ? -1 : i} />
             {/each}
