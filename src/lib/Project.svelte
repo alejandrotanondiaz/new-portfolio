@@ -33,6 +33,9 @@
 <article>
     <svelte:element this={"h" + hLevel}>{ info.title }</svelte:element>
     <img src="{info.image}" alt="">
+    {#if info.url}
+      <a href="url">{info.url}</a>
+    {/if}
     <p>{info.description}</p>
     <p>C. {info.year}</p>
 </article>

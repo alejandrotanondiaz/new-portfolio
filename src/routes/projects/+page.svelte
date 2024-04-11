@@ -43,6 +43,7 @@ $: filteredByYear = filteredProjects.filter(project => {
 <div class="projects">
     {#each filteredByYear as p}
     <Project info={p} />
+    
     {/each}
 
 </div>

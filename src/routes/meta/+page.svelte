@@ -1,6 +1,8 @@
 <script>
     import * as d3 from "d3";
     import { onMount } from "svelte";
+    import Pie from "$lib/Pie.svelte";
+
 
     let data = [];
     let commits = [];
@@ -92,6 +94,7 @@
     let cursor = {x: 0, y: 0};
     let svg;
     let brushSelection; 
+    $: brushSelection;
     function brushed (evt) {
         console.log("brushing")
         brushSelection = evt.selection;
@@ -115,7 +118,10 @@
         d3.select(svg).call(d3.brush().on("start brush end", brushed));
         d3.select(svg).selectAll(".dots, .overlay ~ *").raise();
     }
-
+    $: selectedCommits = brushSelection ? commits.filter(isCommitSelected) : [];
+    $: hasSelection = brushSelection && selectedCommits.length > 0;
+    $: selectedLines = (hasSelection ? selectedCommits : commits).flatMap(d => d.lines);
+    $: languageBreakdown = d3.rollup(selectedLines,(d) => d.length, (d) => d.type);
     
 </script>
 
@@ -205,7 +211,7 @@
 
     circle.selected {
         fill: coral;
-    }
+    } 
 </style>
 
 <svelte:head>
@@ -254,7 +260,10 @@
             />
         {/each}
         </g>
+        
 </svg>
+<p>{hasSelection ? selectedCommits.length : "No"} commits selected</p>
+<Pie data={Array.from(languageBreakdown).map(([language, lines]) => ({label: language, value: lines}))} />
 <dl id="commit-tooltip" class="info tooltip" hidden={hoveredIndex === -1} style="top: {cursor.y}px; left: {cursor.x}px">
     <dt>Commit</dt>
     <dd><a href="{ hoveredCommit.url }" target="_blank">{ hoveredCommit.id }</a></dd>

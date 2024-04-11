@@ -1,9 +1,10 @@
 [
     {
-        "title": "Lorem ipsum dolor sit.",
+        "title": "Bikewatching",
         "year": "2024",
-        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla, nisi quidem doloremque et dolor blanditiis, at nobis quo necessitatibus iure ipsa pariatur esse nam accusamus in? Officia autem distinctio blanditiis?"
+        "image": "/images/BikewatchingPic.png",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla, nisi quidem doloremque et dolor blanditiis, at nobis quo necessitatibus iure ipsa pariatur esse nam accusamus in? Officia autem distinctio blanditiis?",
+        "url": "https://alejandrotanondiaz.github.io/bikewatching/"
     },
     {
         "title": "Culpa sit harum ipsam.",
